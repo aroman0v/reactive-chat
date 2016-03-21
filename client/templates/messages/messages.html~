@@ -1,0 +1,9 @@
+
+<template name="messages">
+    
+    <div id="messages" style="background-color: #ffffff; border: 1px solid darkgray; max-height: 200px; overflow: auto">
+        {{#each messages}}
+            {{> message}}
+        {{/each}}
+    </div>
+</template>

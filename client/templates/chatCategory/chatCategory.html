@@ -1,0 +1,19 @@
+<template name="rooms">
+<div class="chat_location">
+                        <h4 class="title_in_block">Категории чата:</h4>
+                        <ul class="categories_list">
+{{#each rooms}}
+        {{> room}}
+    {{/each}}
+
+                            
+                        </ul>
+                    </div>
+
+    
+   
+</template>
+
+<template name="room">
+    <li>{{roomname}}</li>
+</template>

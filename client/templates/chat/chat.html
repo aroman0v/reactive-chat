@@ -1,0 +1,48 @@
+<template name="chat">
+    
+
+       <div class="header_block">
+        <div class="header">
+            <div class="logo">
+                <h1>Reactive Chat</h1>
+            </div>
+
+            <ul class="nav pull-right">
+                         <li><a>{{> loginButtons align="right"}}</a></li>
+                </ul>
+        </div>
+    </div>
+
+<div class="content_block">
+        <div class="chat_block">
+        {{#if currentUser}}
+       
+         <div class="chat">   
+<div class="messages_block">
+                    <div class="block_title">
+                        <h4>{{roomname}}</h4>
+                    </div>
+                            
+{{> messages}}
+                        
+
+
+             {{> input}}   
+            </div>
+
+            <div class="right_block">
+                {{> rooms}}
+		{{> userList}}
+		</div>
+            
+        </div>
+        {{else}}
+        <div class="hero-unit">
+            <h1>Привет кароче, давай логуйся</h1>
+            <p>Справа вгорі є силка, клікнув вже!</p>
+        </div>
+        {{/if}}
+
+    </div>
+</div>
+</template>
