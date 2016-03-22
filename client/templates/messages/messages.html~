@@ -1,9 +1,12 @@
 
 <template name="messages">
-    
-    <div id="messages" style="background-color: #ffffff; border: 1px solid darkgray; max-height: 200px; overflow: auto">
+    <div class="messages">
+                        <div class="popup-left-corner">
+    <div id="messages">
         {{#each messages}}
             {{> message}}
         {{/each}}
     </div>
+</div>
+</div>
 </template>

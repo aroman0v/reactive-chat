@@ -38,8 +38,8 @@
         </div>
         {{else}}
         <div class="hero-unit">
-            <h1>Welcome to MeteorChat</h1>
-            <p>Please login!</p>
+            <h1>Привет кароче, давай логуйся</h1>
+            <p>Справа вгорі є силка, клікнув вже!</p>
         </div>
         {{/if}}
 

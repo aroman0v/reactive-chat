@@ -5,7 +5,7 @@ if (Meteor.isClient) {
 
   Meteor.subscribe("rooms");
   Meteor.subscribe("messages");
-  Session.setDefault("roomname", "Meteor solutions");
+  Session.setDefault("roomname", "Meteor");
 
   Template.input.events({
     'click .sendMsg': function(e) {
