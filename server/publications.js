@@ -1,13 +1,15 @@
-if (Meteor.isServer) {
+
   Meteor.startup(function () {
     Messages.remove({});
     Rooms.remove({});
     if (Rooms.find().count() === 0) {
-      ["Meteor", "JavaScript", "Reactive", "MongoDB"].forEach(function(r) {
+      ["Meteor Solutions", "JavaScript", "PhP Dev", "MongoDB"].forEach(function(r) {
         Rooms.insert({roomname: r});
       });
     }
   });
+ 
+  
   
   Rooms.deny({
     insert: function (userId, doc) {
@@ -37,11 +39,19 @@ if (Meteor.isServer) {
     }
   });
   
+  Meteor.publish("logins", function () {
+    return Logins.find();
+  });
+  
+   Meteor.publish("users", function () {
+    return Users.find();
+  });
+  
   Meteor.publish("rooms", function () {
     return Rooms.find();
   });
   Meteor.publish("messages", function () {
-    return Messages.find({}, {sort: {ts: -1}});
+    return Messages.find({}, {sort: {ts: +1}});
   });
-}
+
 

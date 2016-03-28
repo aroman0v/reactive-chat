@@ -3,13 +3,17 @@
 <div class="block_title">
                         <h4>{{roomname}}</h4>
                     </div>
+					{{#each messages}}
     <div class="messages">
                         <div class="popup-left-corner">
+						
     <div id="messages">
-        {{#each messages}}
+        
             {{> message}}
-        {{/each}}
+       
     </div>
+	 
 </div>
 </div>
+{{/each}}
 </template>
