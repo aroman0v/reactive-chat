@@ -11,13 +11,19 @@ Template.input.events({
 
 _sendMessage = function() {
     var el = document.getElementById("msg");
+
     Messages.insert({user: Meteor.user().username, msg: el.value, ts: new Date(), room: Session.get("roomname")});
+InfoMessages.insert({messInfo: [{msg: el.value, ts: new Date(), room: Session.get("roomname")}]});
     el.value = "";
     el.focus();
 };
 
 Template.messages.helpers({
     messages: function() {
+        return Messages.find({room: Session.get("roomname")}, {sort: {ts: +1}});
+    },
+
+infoMessages: function() {
         return Messages.find({room: Session.get("roomname")}, {sort: {ts: +1}});
     },
     roomname: function() {

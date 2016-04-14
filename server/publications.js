@@ -38,13 +38,33 @@
       return (userId !== null);
     }
   });
-  
-  Meteor.publish("logins", function () {
-    return Logins.find();
+
+InfoMessages.deny({
+    insert: function (userId, doc) {
+      return (userId === null);
+    },
+    update: function (userId, doc, fieldNames, modifier) {
+      return true;
+    },
+    remove: function (userId, doc) {
+      return true;
+    }
+  });
+  InfoMessages.allow({
+    insert: function (userId, doc) {
+      return (userId !== null);
+    }
+  });
+InfoMessages.allow({
+    insert: function (userId, doc) {
+      return (userId !== null);
+    }
   });
   
+  
+  
    Meteor.publish("users", function () {
-    return Users.find();
+    return Meteor.users.find();
   });
   
   Meteor.publish("rooms", function () {
@@ -52,6 +72,10 @@
   });
   Meteor.publish("messages", function () {
     return Messages.find({}, {sort: {ts: +1}});
+  });
+
+Meteor.publish("infoMessages", function () {
+    return InfoMessages.find({}, {sort: {ts: +1}});
   });
 
 
