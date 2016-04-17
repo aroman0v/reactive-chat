@@ -1,0 +1,19 @@
+<template name="country">
+<div class="chat_location">
+                        <h4 class="title_in_block">Misto:</h4>
+                        <ul class="categories_list">
+{{#each country}}
+        {{> thiscountry}}
+    {{/each}}
+
+                            
+                        </ul>
+                    </div>
+
+    
+   
+</template>
+
+<template name="thiscountry">
+    <li>{{countryname}}</li>
+</template>

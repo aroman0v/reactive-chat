@@ -107,14 +107,14 @@ background-image: url("images/bg.jpeg");
 
     border-radius: 0 10px 0 0;
     border-bottom: 2px solid #eee;
-    height: 230px;
+    height: 170px;
     overflow: auto;
     position: relative;
     width: 100%;
 }
 
 .users {
-    height: 250px;
+        height: 162px;
     overflow: auto;
     position: relative;
     width: 100%;
