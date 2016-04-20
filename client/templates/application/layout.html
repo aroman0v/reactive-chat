@@ -17,17 +17,19 @@
         <div class="chat_block">
         {{#if currentUser}}
        
-         <div class="chat">   
+         <div class="chat">  
+
 <div class="messages_block">
-                    
+      <div class="main_block_left">               
                             
 {{> messages}}
                         
 
 
-             {{> input}}   
+              
             </div>
-
+{{> input}} 
+</div> 
             <div class="right_block">
                 {{> rooms}}
 		{{> userList}}
