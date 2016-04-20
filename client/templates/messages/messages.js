@@ -21,7 +21,7 @@ Country.insert({countryInfo: [{country: Session.get("countryname"), msg: el.valu
 
 Template.messages.helpers({
     messages: function() {
-        return Messages.find({room: Session.get("roomname")}, {sort: {ts: +1}});
+        return Messages.find({room: Session.get("roomname"), country: Session.get("countryname")}, {sort: {ts: +1}});
     },
    
     infoMessages: function() {
